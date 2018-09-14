@@ -1,14 +1,18 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+     Marvel API
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="home">
+  <ion-list>
+     <ion-item class="hero" (click)="getDescription(hero.id)" *ngFor="let hero of heroes">
+      <ion-avatar item-left >
+        <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}">
+      </ion-avatar>
+      <h2>{{hero.name}}</h2>
+    </ion-item>
+  </ion-list>
 </ion-content>
